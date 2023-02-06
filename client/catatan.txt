@@ -1,0 +1,11 @@
+1. Install React Bootstrap
+npm install react-bootstrap bootstrap
+
+2. Install React DOM
+npm i react-router-dom
+
+3. Install React Date Picker
+npm i react-datepicker
+
+4. Install React Moment
+npm i react-moment
