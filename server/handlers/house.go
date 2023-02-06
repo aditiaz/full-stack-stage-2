@@ -82,7 +82,7 @@ func (h *handlerhouse) CreateHouse(w http.ResponseWriter, r *http.Request) {
 		BathRoom:    r.FormValue("bathroom"),
 		Sqf:         r.FormValue("sqf"),
 		Description: r.FormValue("description"),
-		Address:     r.FormValue("price"),
+		Address:     r.FormValue("address"),
 		CityID:      cityid,
 	}
 

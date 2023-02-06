@@ -25,7 +25,7 @@ import {
 import IconNavbar from "../assets/icons/IconNavbar.png";
 import Moment from "react-moment";
 // import ModalAfterBooking from "../components/modals/ModalAfterBooking";
-import { useParams, useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 function MyBooking() {
   const getData = JSON.parse(localStorage.getItem("Date"));
@@ -61,7 +61,7 @@ function MyBooking() {
     };
     const response = await API.get("/house/" + id, config);
     console.log("data response test", response);
-    return response.data;
+    return response.data.data;
   });
 
   const dateTime = new Date();
@@ -81,8 +81,11 @@ function MyBooking() {
         attachment: "image.png",
       });
 
-      const tokenBaru = localStorage.getItem("token");
-      console.log("habis add transaction : ", response);
+      const tokenBaru = response.data.data.token;
+      console.log(
+        "habis add transaction tokennnnnn : ",
+        response.data.data.token
+      );
 
       // const token = response.data.data.token;
       console.log("ini tokennnnn", response);
@@ -117,7 +120,7 @@ function MyBooking() {
     //change this to the script source you want to load, for example this is snap.js sandbox env
     const midtransScriptUrl = "https://app.sandbox.midtrans.com/snap/snap.js";
     //change this according to your client-key
-    const myMidtransClientKey = "Mid-client-euQPUY2OdvpONRP8";
+    const myMidtransClientKey = "SB-Mid-client-kcBD2UV-NpQHxEFw";
 
     let scriptTag = document.createElement("script");
     scriptTag.src = midtransScriptUrl;

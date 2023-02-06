@@ -62,14 +62,14 @@ func (r *repository) DeleteTransaction(transaction models.Transaction) (models.T
 
 func (r *repository) GetOneTransaction(ID string) (models.Transaction, error) {
 	var transaction models.Transaction
-	err := r.db.Preload("House").Preload("User").First(&transaction, "id = ?", ID).Error
+	err := r.db.Preload("House.City").Preload("User.Role").First(&transaction, "id = ?", ID).Error
 
 	return transaction, err
 }
 
 func (r *repository) UpdateTransactionNew(status string, ID string) error {
 	var transaction models.Transaction
-	r.db.Preload("Product").First(&transaction, ID)
+	r.db.Preload("House").Preload("User").First(&transaction, ID)
 
 	// If is different & Status is "success" decrement product quantity
 

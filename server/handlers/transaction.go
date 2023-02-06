@@ -126,7 +126,7 @@ func (h *handlertransaction) CreateTransaction(w http.ResponseWriter, r *http.Re
 		Status:     request.Status,
 		Attachment: request.Attachment,
 	}
-	ubah, _ := strconv.Atoi(request.Total)
+	total, _ := strconv.Atoi(request.Total)
 	newTransaction, err := h.TransactionRepository.CreateTransaction(transaction)
 	if err != nil {
 		w.WriteHeader(http.StatusInternalServerError)
@@ -146,7 +146,7 @@ func (h *handlertransaction) CreateTransaction(w http.ResponseWriter, r *http.Re
 	req := &snap.Request{
 		TransactionDetails: midtrans.TransactionDetails{
 			OrderID:  strconv.Itoa(transaction.ID),
-			GrossAmt: int64(ubah),
+			GrossAmt: int64(total),
 		},
 		CreditCard: &snap.CreditCardDetails{
 			Secure: true,
