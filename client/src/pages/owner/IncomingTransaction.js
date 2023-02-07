@@ -1,12 +1,5 @@
 import React, { useState } from "react";
-import {
-  Button,
-  Container,
-  Image,
-  ListGroup,
-  Modal,
-  Table,
-} from "react-bootstrap";
+import { Button, Container, Image, ListGroup, Modal, Table } from "react-bootstrap";
 
 import { useParams } from "react-router-dom";
 
@@ -61,17 +54,11 @@ const IncomingTransaction = () => {
                 const approve = value.status;
                 const pending = value.status;
                 if (approve === "Approve") {
-                  statusPayment = (
-                    <td className="text-success text-center">{value.status}</td>
-                  );
+                  statusPayment = <td className="text-success text-center">{value.status}</td>;
                 } else if (pending === "Pending") {
-                  statusPayment = (
-                    <td className="text-warning text-center">{value.status}</td>
-                  );
+                  statusPayment = <td className="text-warning text-center">{value.status}</td>;
                 } else {
-                  statusPayment = (
-                    <td className="text-danger text-center">{value.status}</td>
-                  );
+                  statusPayment = <td className="text-danger text-center">{value.status}</td>;
                 }
                 return (
                   <tr key={index}>
@@ -91,10 +78,7 @@ const IncomingTransaction = () => {
         </Container>
       </div>
       <Modal size="xl" show={show} centered onHide={handleClose}>
-        <Modal.Header
-          closeButton
-          style={{ borderBottom: "none" }}
-        ></Modal.Header>
+        <Modal.Header closeButton style={{ borderBottom: "none" }}></Modal.Header>
         <Modal.Body>
           <ListGroup variant="flush">
             <ListGroup.Item>
@@ -213,9 +197,7 @@ const IncomingTransaction = () => {
                 </div>
                 <div className="d-flex flex-column align-items-center">
                   <Image src={PaymentProof} />
-                  <div style={{ fontSize: "13px", color: "#818181" }}>
-                    upload payment proof
-                  </div>
+                  <div style={{ fontSize: "13px", color: "#818181" }}>upload payment proof</div>
                 </div>
               </div>
             </ListGroup.Item>

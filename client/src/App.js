@@ -17,7 +17,7 @@ import MyBooking from "./pages/MyBooking";
 import MyBookingPending from "./pages/MyBookingPending";
 import History from "./pages/History";
 
-import IncomingTransaction from "./pages/owner/Incoming Transaction";
+import IncomingTransaction from "./pages/owner/IncomingTransaction";
 import HistoryIncome from "./pages/owner/HistoryIncome";
 import AddProperty from "./pages/owner/AddProperty";
 

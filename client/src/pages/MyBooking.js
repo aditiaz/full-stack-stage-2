@@ -8,15 +8,7 @@ import convertRupiah from "rupiah-format";
 import { useMutation, useQuery } from "react-query";
 import { API } from "../config/api";
 
-import {
-  Badge,
-  Button,
-  Card,
-  Container,
-  Image,
-  ListGroup,
-  Table,
-} from "react-bootstrap";
+import { Badge, Button, Card, Container, Image, ListGroup, Table } from "react-bootstrap";
 
 // import { useParams } from "react-router-dom";
 
@@ -44,13 +36,6 @@ function MyBooking() {
     console.log("ini response user", response);
     return response.data.data;
   });
-
-  // Fetching data house from database
-  // const { data: house } = useQuery("houseCache", async () => {
-  //   const response = await API.get("/house/" + id);
-  //   console.log("ini response house", response);
-  //   return response.data.data;
-  // });
 
   let { data: house, refetch } = useQuery("houseCache", async () => {
     const config = {
@@ -82,10 +67,7 @@ function MyBooking() {
       });
 
       const tokenBaru = response.data.data.token;
-      console.log(
-        "habis add transaction tokennnnnn : ",
-        response.data.data.token
-      );
+      console.log("habis add transaction tokennnnnn : ", response.data.data.token);
 
       // const token = response.data.data.token;
       console.log("ini tokennnnn", response);
@@ -120,7 +102,7 @@ function MyBooking() {
     //change this to the script source you want to load, for example this is snap.js sandbox env
     const midtransScriptUrl = "https://app.sandbox.midtrans.com/snap/snap.js";
     //change this according to your client-key
-    const myMidtransClientKey = "SB-Mid-client-kcBD2UV-NpQHxEFw";
+    const myMidtransClientKey = "SB-Mid-client-KIN72obBiBI22Ax0";
 
     let scriptTag = document.createElement("script");
     scriptTag.src = midtransScriptUrl;
@@ -145,9 +127,7 @@ function MyBooking() {
                   <Image src={IconNavbar} />
                 </div>
                 <div className="d-flex flex-column align-items-center">
-                  <div style={{ fontSize: "36px", fontWeight: "800" }}>
-                    Booking
-                  </div>
+                  <div style={{ fontSize: "36px", fontWeight: "800" }}>Booking</div>
                   <div
                     style={{
                       fontSize: "18px",
@@ -164,9 +144,7 @@ function MyBooking() {
               </div>
               <div className="d-flex align-items-center justify-content-between">
                 <div className="d-flex flex-column gap-3">
-                  <div style={{ fontSize: "24px", fontWeight: "800" }}>
-                    {house?.name}
-                  </div>
+                  <div style={{ fontSize: "24px", fontWeight: "800" }}>{house?.name}</div>
                   <div style={{ fontSize: "14px" }}>
                     {house?.address}, {house?.city.name}
                   </div>
@@ -199,9 +177,7 @@ function MyBooking() {
                 </div>
                 <div className="d-flex flex-column gap-4">
                   <div>
-                    <div style={{ fontSize: "18px", fontWeight: "700" }}>
-                      Ameneties
-                    </div>
+                    <div style={{ fontSize: "18px", fontWeight: "700" }}>Ameneties</div>
                     <div
                       style={{
                         fontSize: "14px",
@@ -213,9 +189,7 @@ function MyBooking() {
                     </div>
                   </div>
                   <div>
-                    <div style={{ fontSize: "18px", fontWeight: "700" }}>
-                      Type of Rent
-                    </div>
+                    <div style={{ fontSize: "18px", fontWeight: "700" }}>Type of Rent</div>
                     <div
                       style={{
                         fontSize: "14px",
@@ -317,10 +291,7 @@ function MyBooking() {
                     }}
                     colspan={2}
                   >
-                    <Moment
-                      duration={getData.checkin}
-                      date={getData.checkout}
-                    />
+                    <Moment duration={getData.checkin} date={getData.checkout} />
                   </td>
                 </tr>
                 <tr style={{ borderBottomStyle: "none" }}>
